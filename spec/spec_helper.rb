@@ -4,6 +4,9 @@ require "sinatra/activerecord/rake"
 
 RSpec.configure do |config|
   # Database setup
+  ActiveRecord::Base.connection.tables.each do |table|
+    ActiveRecord::Base.connection.drop_table(table, force: :cascade)
+  end
 
   config.before(:suite) do
     Rake::Task["db:migrate"].execute
