@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_07_25_145130) do
+ActiveRecord::Schema[8.0].define(version: 2026_07_21_133912) do
   create_table "costume_stores", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -19,15 +19,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_25_145130) do
     t.boolean "is_in_business"
     t.datetime "opening_time"
     t.datetime "closing_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "costumes", force: :cascade do |t|
     t.string "name"
     t.float "price"
     t.string "size"
-    t.string "img_url"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -41,7 +39,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_07_25_145130) do
     t.datetime "opening_date"
     t.datetime "closing_date"
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 end
